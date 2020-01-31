@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Department;
 use App\Employee;
+use App\Salary;
+use App\Title;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Tp1 extends Controller
 {
@@ -11,7 +15,7 @@ class Tp1 extends Controller
      * Trouver les employées de sexe féminin classés par emp_no, limité aux 10 premiers résultats
      */
     public function rqt1() {
-        return Employee::where('gender','F')->orderBy('emp_no')->offset(0)->limit(10)->get();
+        return Employee::where('gender', 'F')->orderBy('emp_no')->offset(0)->limit(10)->get();
     }
 
     /**
@@ -27,7 +31,10 @@ class Tp1 extends Controller
      *
      * */
     public function rqt3() {
-        return null;
+        return Employee::where([
+            ['gender', 'M'],
+            ['hire_date', '>', '1965-01-31']
+        ])->get();
     }
 
 
@@ -37,7 +44,7 @@ class Tp1 extends Controller
      *
      * */
     public function rqt4() {
-        return null;
+        return Department::count();
     }
 
     /**
@@ -46,7 +53,10 @@ class Tp1 extends Controller
      *
      * */
     public function rqt5() {
-        return null;
+        return Employee::where([
+            ['first_name', 'Richard'],
+            ['gender', 'F']
+        ])->count();
     }
 
 
@@ -56,7 +66,7 @@ class Tp1 extends Controller
      *
      * */
     public function rqt6() {
-        return null;
+        //return Title::groupBy('title')->count();
     }
 
 
@@ -66,7 +76,7 @@ class Tp1 extends Controller
      *
      * */
     public function rqt7() {
-        return null;
+        return Salary::where('emp_no', '287323')->avg('salary');
     }
 
 
@@ -76,7 +86,14 @@ class Tp1 extends Controller
      *
      * */
     public function rqt8() {
-        return null;
+        return Employee::where([
+            ['first_name', 'Danny'],
+            ['last_name', 'Rando']
+        ])
+            ->whereRaw('? between from_date and to_date', [date('1990-01-12')])
+            ->join('titles', 'titles.emp_no', '=', 'employees.emp_no')
+            ->select('title')
+            ->get();
     }
 
     /**
@@ -85,7 +102,8 @@ class Tp1 extends Controller
      *
      * */
     public function rqt9() {
-        return null;
+        //return Employee::join('salaries', 'salaries.emp_no', '=', 'employees.emp_no')
+            //->max('salary');
     }
 
     /**
@@ -94,7 +112,11 @@ class Tp1 extends Controller
      *
      */
     public function rqt10() {
-        return null;
+        return Employee::where('dept_name', 'Sales')
+            ->join('dept_emp', 'employees.emp_no', '=', 'dept_emp.emp_no')
+            ->join('departments', 'departments.dept_no', '=', 'dept_emp.dept_no')
+            ->whereRaw('? between from_date and to_date', [date('2000-01-01')])
+            ->count();
     }
 
     /**
