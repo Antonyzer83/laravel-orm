@@ -45,4 +45,15 @@ class Employee extends Model
     {
         return $this->belongsToMany('App\Department', 'dept_emp', 'emp_no', 'dept_no');
     }
+
+    /**
+     * The relationship between employees and salaries
+     * An employee can have many salaries
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function salaries()
+    {
+        return $this->belongsToMany('App\Salary', 'salaries', 'emp_no');
+    }
 }
