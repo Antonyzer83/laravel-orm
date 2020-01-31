@@ -27,7 +27,7 @@ class Department extends Model
      */
     public function dept_managers()
     {
-        return $this->belongsToMany('App\Employee', 'dept_manager', 'dept_no', 'emp_no');
+        return $this->belongsToMany('App\Employee', 'dept_manager', 'dept_no', 'emp_no')->withPivot(['from_date', 'to_date']);
     }
 
     /**
@@ -37,6 +37,6 @@ class Department extends Model
      */
     public function dept_emps()
     {
-        return $this->belongsToMany('App\Employee', 'dept_emp', 'dept_no', 'emp_no');
+        return $this->belongsToMany('App\Employee', 'dept_emp', 'dept_no', 'emp_no')->withPivot(['from_date', 'to_date']);
     }
 }

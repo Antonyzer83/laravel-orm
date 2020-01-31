@@ -22,7 +22,7 @@ class Title extends Model
      *
      * @var string
      */
-    protected $primaryKey = 'null';
+    protected $primaryKey = 'emp_no';
 
     /**
      * The relationship between titles and employees

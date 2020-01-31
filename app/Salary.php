@@ -29,7 +29,7 @@ class Salary extends Model
      *
      * @var string
      */
-    protected $primaryKey = 'null';
+    protected $primaryKey = 'emp_no';
 
     /**
      * The relationship between salaries and employees
