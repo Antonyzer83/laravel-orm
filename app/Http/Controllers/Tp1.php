@@ -6,8 +6,6 @@ use App\Department;
 use App\Employee;
 use App\Salary;
 use App\Title;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class Tp1 extends Controller
 {
@@ -15,7 +13,10 @@ class Tp1 extends Controller
      * Trouver les employées de sexe féminin classés par emp_no, limité aux 10 premiers résultats
      */
     public function rqt1() {
-        return Employee::where('gender', 'F')->orderBy('emp_no')->offset(0)->limit(10)->get();
+        return Employee::where('gender', 'F')
+            ->orderBy('emp_no')
+            ->offset(0)->limit(10)
+            ->get();
     }
 
     /**
@@ -66,7 +67,7 @@ class Tp1 extends Controller
      *
      * */
     public function rqt6() {
-        //return Title::groupBy('title')->count();
+        return Title::distinct('title')->count('title');
     }
 
 
@@ -102,8 +103,11 @@ class Tp1 extends Controller
      *
      * */
     public function rqt9() {
-        //return Employee::join('salaries', 'salaries.emp_no', '=', 'employees.emp_no')
-            //->max('salary');
+        return Employee::join('salaries', 'salaries.emp_no', '=', 'employees.emp_no')
+            ->whereIn('salaries.salary', function ($query) {
+                $query->selectRaw('max(salary)')->from('salaries');
+            })
+            ->get();
     }
 
     /**
@@ -123,6 +127,22 @@ class Tp1 extends Controller
      * Qui est le manager de Martine Hambrick actuellement et quel est son titre
      */
     public function rqt11() {
-        return null;
+        return Employee::join('dept_manager', 'dept_manager.emp_no', 'employees.emp_no')
+            ->join('departments', 'departments.dept_no', 'dept_manager.dept_no')
+            ->join('titles', 'titles.emp_no', 'employees.emp_no')
+            ->where([
+                ['title', 'Manager']
+            ])
+            ->whereRaw('now() between dept_manager.from_date and dept_manager.to_date')
+            ->whereIn('dept_manager.dept_no', function ($query) {
+                $query->selectRaw('dept_no')
+                    ->from('dept_emp')
+                    ->join('employees', 'dept_emp.emp_no', 'employees.emp_no')
+                    ->where([
+                        ['first_name', 'Martine'],
+                        ['last_name', 'Hambrick']
+                    ]);
+            })
+            ->get();
     }
 }
