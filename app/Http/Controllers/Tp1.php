@@ -34,7 +34,7 @@ class Tp1 extends Controller
     public function rqt3() {
         return Employee::where([
             ['gender', 'M'],
-            ['hire_date', '>', '1965-01-31']
+            ['birth_date', '>', '1965-01-31']
         ])->get();
     }
 
@@ -87,13 +87,13 @@ class Tp1 extends Controller
      *
      * */
     public function rqt8() {
-        return Employee::where([
-            ['first_name', 'Danny'],
-            ['last_name', 'Rando']
-        ])
+        return Employee::select('title')
+            ->where([
+                ['first_name', 'Danny'],
+                ['last_name', 'Rando']
+            ])
             ->whereRaw('? between from_date and to_date', [date('1990-01-12')])
             ->join('titles', 'titles.emp_no', '=', 'employees.emp_no')
-            ->select('title')
             ->get();
     }
 
@@ -130,9 +130,7 @@ class Tp1 extends Controller
         return Employee::join('dept_manager', 'dept_manager.emp_no', 'employees.emp_no')
             ->join('departments', 'departments.dept_no', 'dept_manager.dept_no')
             ->join('titles', 'titles.emp_no', 'employees.emp_no')
-            ->where([
-                ['title', 'Manager']
-            ])
+            ->where('title', 'Manager')
             ->whereRaw('now() between dept_manager.from_date and dept_manager.to_date')
             ->whereIn('dept_manager.dept_no', function ($query) {
                 $query->selectRaw('dept_no')

@@ -19,13 +19,15 @@ class Department extends Model
      * @var string
      */
     protected $primaryKey = 'dept_no';
+    public $incrementing = false;
+    protected $keyType = "string";
 
     /**
      * The relationship between departments and employees for managers
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function dept_managers()
+    public function managers()
     {
         return $this->belongsToMany('App\Employee', 'dept_manager', 'dept_no', 'emp_no')->withPivot(['from_date', 'to_date']);
     }
@@ -35,7 +37,7 @@ class Department extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function dept_emps()
+    public function employees()
     {
         return $this->belongsToMany('App\Employee', 'dept_emp', 'dept_no', 'emp_no')->withPivot(['from_date', 'to_date']);
     }

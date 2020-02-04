@@ -28,10 +28,10 @@ class Title extends Model
      * The relationship between titles and employees
      * One title can be only for one employee
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function employee()
     {
-        return $this->hasOne('App\Employee', 'emp_no');
+        return $this->belongsTo('App\Employee', 'emp_no', 'emp_no');
     }
 }

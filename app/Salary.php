@@ -35,10 +35,10 @@ class Salary extends Model
      * The relationship between salaries and employees
      * One salary can be only for one employee
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function employee()
     {
-        return $this->hasOne('App\Employee', 'emp_no');
+        return $this->belongsTo('App\Employee', 'emp_no');
     }
 }

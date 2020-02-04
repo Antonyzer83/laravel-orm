@@ -31,7 +31,7 @@ class Employee extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function dept_managers()
+    public function managedDepartments()
     {
         return $this->belongsToMany('App\Department', 'dept_manager', 'emp_no', 'dept_no')->withPivot(['from_date', 'to_date']);
     }
@@ -41,7 +41,7 @@ class Employee extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function dept_emps()
+    public function departments()
     {
         return $this->belongsToMany('App\Department', 'dept_emp', 'emp_no', 'dept_no')->withPivot(['from_date', 'to_date']);
     }
