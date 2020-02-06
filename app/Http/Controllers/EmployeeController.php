@@ -2,29 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Employee;
 use Illuminate\Http\Request;
+use App\Http\Resources\Employee as Resource;
 
 class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
-        //
+        return response()->json(Resource::collection(Employee::limit(10)->get()));
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $data = $this->storeValidation();
+
+        return response()->json(Resource::collection(Employee::create($data)));
     }
 
     /**
@@ -35,7 +39,7 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        //
+        return Employee::find($id);
     }
 
     /**
@@ -58,6 +62,17 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //Employee::delete($id);
+    }
+
+    protected function storeValidation()
+    {
+        return request()->validate([
+            'birth_date' => 'required|date',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'gender' => 'required',
+            'hire_date' => 'required|date'
+        ]);
     }
 }

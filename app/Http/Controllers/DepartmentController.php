@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Department;
 use Illuminate\Http\Request;
+use App\Http\Resources\Department as Resource;
 
 class DepartmentController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Department[]|\Illuminate\Database\Eloquent\Collection
      */
     public function index()
     {
-        //
+        return Department::all();
     }
 
     /**
@@ -30,12 +32,12 @@ class DepartmentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  string  $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show($id)
     {
-        //
+        return response()->json(Department::find($id));
     }
 
     /**
