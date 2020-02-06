@@ -6,6 +6,7 @@ use App\Department;
 use App\Employee;
 use App\Salary;
 use App\Title;
+use Illuminate\Support\Carbon;
 
 class Tp1 extends Controller
 {
@@ -15,7 +16,8 @@ class Tp1 extends Controller
     public function rqt1() {
         return Employee::where('gender', 'F')
             ->orderBy('emp_no')
-            ->offset(0)->limit(10)
+            ->offset(0)
+            ->limit(10)
             ->get();
     }
 
@@ -77,7 +79,8 @@ class Tp1 extends Controller
      *
      * */
     public function rqt7() {
-        return Salary::where('emp_no', '287323')->avg('salary');
+        return Salary::where('emp_no', '287323')
+            ->avg('salary');
     }
 
 
@@ -141,6 +144,33 @@ class Tp1 extends Controller
                         ['last_name', 'Hambrick']
                     ]);
             })
+            ->get();
+    }
+
+    private function today($query) {
+        return $query->where([
+            ['from_date', '<', now()],
+            ['to_date', '>', now()]
+        ]);
+    }
+
+    /**
+     * Dans quel département, quel salaire et quel titre possède l'employé 499666 actuellement
+     */
+    public function rqt12() {
+        return Employee::
+            with([
+                'titles' => function($query) {
+                    return $this->today($query);
+                },
+                'departments' => function ($query) {
+                    return $this->today($query);
+                },
+                'salaries' => function ($query) {
+                    return $this->today($query);
+                },
+            ])
+            ->where('emp_no', 499666)
             ->get();
     }
 }
