@@ -15,7 +15,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        return response()->json(Resource::collection(Employee::limit(10)->get()));
+        return response()->json(Resource::collection(Employee::paginate(15)));
     }
 
     /**
@@ -27,6 +27,9 @@ class EmployeeController extends Controller
     public function store()
     {
         $data = $this->storeValidation();
+
+        $bigId = Employee::max('emp_no');
+        $data['emp_no'] = $bigId + 1;
 
         return response()->json(Resource::collection(Employee::create($data)));
     }
@@ -71,7 +74,7 @@ class EmployeeController extends Controller
             'birth_date' => 'required|date',
             'first_name' => 'required',
             'last_name' => 'required',
-            'gender' => 'required',
+            'gender' => 'required|in:M,F',
             'hire_date' => 'required|date'
         ]);
     }

@@ -12,6 +12,7 @@ class Employee extends Model
      * @var array
      */
     protected $fillable = [
+        'emp_no',
         'birth_date',
         'first_name',
         'last_name',
@@ -25,6 +26,8 @@ class Employee extends Model
      * @var string
      */
     protected $primaryKey = 'emp_no';
+
+    public $timestamps = false;
 
     /**
      * The relationship between departments and employees for managers
