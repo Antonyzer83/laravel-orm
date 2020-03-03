@@ -31,7 +31,9 @@ class EmployeeController extends Controller
         $bigId = Employee::max('emp_no');
         $data['emp_no'] = $bigId + 1;
 
-        return response()->json(Resource::collection(Employee::create($data)));
+        $employee = Employee::create($data);
+
+        return response()->json($employee);
     }
 
     /**
@@ -72,8 +74,8 @@ class EmployeeController extends Controller
     {
         return request()->validate([
             'birth_date' => 'required|date',
-            'first_name' => 'required',
-            'last_name' => 'required',
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
             'gender' => 'required|in:M,F',
             'hire_date' => 'required|date'
         ]);

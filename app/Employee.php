@@ -29,6 +29,8 @@ class Employee extends Model
 
     public $timestamps = false;
 
+    public $incrementing = false;
+
     /**
      * The relationship between departments and employees for managers
      *
