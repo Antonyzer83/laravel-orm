@@ -11,11 +11,11 @@ class DepartmentController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Department[]|\Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
-        return Department::all();
+        return response()->json(Department::all());
     }
 
     /**
