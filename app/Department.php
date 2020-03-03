@@ -19,7 +19,9 @@ class Department extends Model
      * @var string
      */
     protected $primaryKey = 'dept_no';
+
     public $incrementing = false;
+
     protected $keyType = "string";
 
     /**

@@ -52,11 +52,16 @@ class EmployeeController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+        $data = $this->updateValidation();
+
+        $employee = Employee::find($id);
+        $employee->update($data);
+
+        return response()->json($employee);
     }
 
     /**
@@ -78,6 +83,17 @@ class EmployeeController extends Controller
             'last_name' => 'required|string',
             'gender' => 'required|in:M,F',
             'hire_date' => 'required|date'
+        ]);
+    }
+
+    protected function updateValidation()
+    {
+        return request()->validate([
+            'birth_date' => 'date',
+            'first_name' => 'string',
+            'last_name' => 'string',
+            'gender' => 'in:M,F',
+            'hire_date' => 'date'
         ]);
     }
 }
