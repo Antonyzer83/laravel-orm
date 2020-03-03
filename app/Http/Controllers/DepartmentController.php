@@ -51,9 +51,13 @@ class DepartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Department $department)
+    public function update(Department $department)
     {
-        //
+        $data = $this->updateValidation();
+
+        $department->update($data);
+
+        return $department->toJson();
     }
 
     /**
@@ -64,14 +68,23 @@ class DepartmentController extends Controller
      */
     public function destroy(Department $department)
     {
-        //
+        $d = $department;
+        $department->delete();
+        return $d->toJson();
     }
 
     protected function storeValidation()
     {
         return request()->validate([
-            'dept_no' => 'required|min:4|max:4',
+            'dept_no' => 'required|min:4|max:4|unique:departments,dept_no',
             'dept_name' => 'required|string|max:40'
+        ]);
+    }
+
+    protected function updateValidation()
+    {
+        return request()->validate([
+            'dept_name' => 'string|max:40'
         ]);
     }
 }
