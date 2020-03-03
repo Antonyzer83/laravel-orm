@@ -28,7 +28,7 @@ class EmployeeRequest extends FormRequest
             'birth_date' => 'date',
             'first_name' => 'string|max:255',
             'last_name' => 'string|max:255',
-            'gender' => 'string|in:M,F',
+            'gender' => 'string|max:1|in:M,F',
             'hire_date' => 'date|after:birth_date'
         ];
 
