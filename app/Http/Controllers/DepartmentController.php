@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Department;
-use Illuminate\Http\Request;
-use App\Http\Resources\Department as Resource;
+use App\Http\Requests\DepartmentRequest;
 
 class DepartmentController extends Controller
 {
@@ -24,9 +23,9 @@ class DepartmentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(DepartmentRequest $request)
     {
-        $data = $this->storeValidation();
+        $data = $request->validated();
 
         $department = Department::create($data);
 
@@ -47,13 +46,13 @@ class DepartmentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param DepartmentRequest $request
+     * @param Department $department
      * @return \Illuminate\Http\Response
      */
-    public function update(Department $department)
+    public function update(DepartmentRequest $request, Department $department)
     {
-        $data = $this->updateValidation();
+        $data = $request->validated();
 
         $department->update($data);
 
@@ -63,28 +62,14 @@ class DepartmentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param Department $department
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Department $department)
     {
         $d = $department;
         $department->delete();
         return $d->toJson();
-    }
-
-    protected function storeValidation()
-    {
-        return request()->validate([
-            'dept_no' => 'required|min:4|max:4|unique:departments,dept_no',
-            'dept_name' => 'required|string|max:40'
-        ]);
-    }
-
-    protected function updateValidation()
-    {
-        return request()->validate([
-            'dept_name' => 'string|max:40'
-        ]);
     }
 }

@@ -13,7 +13,7 @@ class DepartmentRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,18 @@ class DepartmentRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
+        $rules = [
+            'dept_no' => 'min:4|max:4|unique:departments,dept_no',
+            'dept_name' => 'string|max:40'
         ];
+
+        if ($this->isMethod('POST')) {
+            $keys = array_keys($rules);
+            for ($i = 0; $i < sizeof($rules); $i++) {
+                $rules[$keys[$i]] .= '|required';
+            }
+        }
+
+        return $rules;
     }
 }
