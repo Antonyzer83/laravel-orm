@@ -15,7 +15,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        return response()->json(Department::all());
+        return Department::all()->toJson();
     }
 
     /**
@@ -24,9 +24,13 @@ class DepartmentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $data = $this->storeValidation();
+
+        $department = Department::create($data);
+
+        return $department->toJson();
     }
 
     /**
@@ -35,9 +39,9 @@ class DepartmentController extends Controller
      * @param  string  $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function show($id)
+    public function show(Department $department)
     {
-        return response()->json(Department::find($id));
+        return $department->toJson();
     }
 
     /**
@@ -47,7 +51,7 @@ class DepartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Department $department)
     {
         //
     }
@@ -58,8 +62,16 @@ class DepartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Department $department)
     {
         //
+    }
+
+    protected function storeValidation()
+    {
+        return request()->validate([
+            'dept_no' => 'required|min:4|max:4',
+            'dept_name' => 'required|string|max:40'
+        ]);
     }
 }

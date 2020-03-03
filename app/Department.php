@@ -11,7 +11,7 @@ class Department extends Model
      *
      * @var array
      */
-    protected $fillable = ['dept_name'];
+    protected $fillable = ['dept_no', 'dept_name'];
 
     /**
      * The primary key associated with the table.
@@ -21,6 +21,8 @@ class Department extends Model
     protected $primaryKey = 'dept_no';
 
     public $incrementing = false;
+
+    public $timestamps = false;
 
     protected $keyType = "string";
 

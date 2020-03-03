@@ -15,7 +15,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        return response()->json(Resource::collection(Employee::paginate(15)));
+        return Employee::paginate(15)->toJson();
     }
 
     /**
@@ -32,7 +32,7 @@ class EmployeeController extends Controller
 
         $employee = Employee::create($data);
 
-        return response()->json($employee);
+        return $employee->toJson();
     }
 
     /**
@@ -41,9 +41,9 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function show($id)
+    public function show(Employee $employee)
     {
-        return response()->json(Employee::find($id));
+        return $employee->toJson();
     }
 
     /**
@@ -53,25 +53,26 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function update($id)
+    public function update(Employee $employee)
     {
         $data = $this->updateValidation();
 
-        $employee = Employee::find($id);
         $employee->update($data);
 
-        return response()->json($employee);
+        return $employee->toJson();
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function destroy($id)
+    public function destroy(Employee $employee)
     {
-        //Employee::delete($id);
+        $e = $employee;
+        $employee->delete();
+        return $e->toJson();
     }
 
     protected function storeValidation()
