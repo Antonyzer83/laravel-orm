@@ -36,7 +36,7 @@ class EmployeeController extends Controller
      * Display the specified resource.
      *
      * @param Employee $employee
-     * @return \Illuminate\Http\JsonResponse
+     * @return string
      */
     public function show(Employee $employee)
     {
@@ -48,7 +48,7 @@ class EmployeeController extends Controller
      *
      * @param EmployeeRequest $request
      * @param Employee $employee
-     * @return \Illuminate\Http\JsonResponse
+     * @return string
      */
     public function update(EmployeeRequest $request, Employee $employee)
     {
@@ -63,7 +63,7 @@ class EmployeeController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Employee $employee
-     * @return \Illuminate\Http\JsonResponse
+     * @return string
      * @throws \Exception
      */
     public function destroy(Employee $employee)
@@ -71,5 +71,21 @@ class EmployeeController extends Controller
         $e = $employee;
         $employee->delete();
         return $e->toJson();
+    }
+
+    /**
+     * Check the employee's title
+     *
+     * @param $id
+     * @return array
+     */
+    public function isManager($id)
+    {
+        $employee = Employee::find($id);
+
+        if ($employee !== null)
+            return ['status' => $employee->isManager()];
+
+        return ['status' => null];
     }
 }

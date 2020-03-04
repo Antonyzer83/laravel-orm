@@ -1,5 +1,6 @@
 <?php
 
+use App\Employee;
 use Illuminate\Http\Request;
 
 /*
@@ -18,9 +19,13 @@ Route::post('register', 'AuthController@register');
 
 Route::apiResource('employees', 'EmployeeController');
 Route::apiResource('departments', 'DepartmentController');
+Route::get('departments/{id}/employees', 'DepartmentController@employees');
 Route::apiResource('employees.titles', 'TitleController');
 Route::apiResource('employees.salaries', 'SalaryController');
 
+Route::get('employees/{id}/isManager', 'EmployeeController@isManager');
+
+/*
 Route::get('1', 'Tp1@rqt1');
 Route::get('2', 'Tp1@rqt2');
 Route::get('3', 'Tp1@rqt3');
@@ -33,3 +38,4 @@ Route::get('9', 'Tp1@rqt9');
 Route::get('10', 'Tp1@rqt10');
 Route::get('11', 'Tp1@rqt11');
 Route::get('12', 'Tp1@rqt12');
+*/

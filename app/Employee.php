@@ -83,4 +83,25 @@ class Employee extends Model
     {
         return $this->hasOne('App\User', 'emp_no', 'emp_no');
     }
+
+    /**
+     * Check if the employee is a manager
+     *
+     * @return bool
+     */
+    public function isManager()
+    {
+        $title = $this->titles()->where('to_date', '9999-01-01')->first();
+
+        $status = ($title->title === 'Manager') ? true : false;
+
+        return $status;
+    }
+
+    public function myDepartment()
+    {
+        $department = $this->departments()->where('to_date', '9999-01-01')->first();
+
+        return $department->dept_no;
+    }
 }
