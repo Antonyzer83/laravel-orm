@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Employee;
 use App\Http\Requests\TitleRequest;
 use App\Title;
-use Illuminate\Http\Request;
 
 class TitleController extends Controller
 {
@@ -56,8 +55,9 @@ class TitleController extends Controller
     {
         $title = $employee->titles()
             ->orderBy('to_date')
-            ->offset($id)
-            ->limit($id)->get();
+            ->skip($id - 1)
+            ->take(1)
+            ->get();
 
         return $title->toJson();
     }

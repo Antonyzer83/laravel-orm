@@ -19,6 +19,7 @@ Route::post('register', 'AuthController@register');
 Route::apiResource('employees', 'EmployeeController');
 Route::apiResource('departments', 'DepartmentController');
 Route::apiResource('employees.titles', 'TitleController');
+Route::apiResource('employees.salaries', 'SalaryController');
 
 Route::get('1', 'Tp1@rqt1');
 Route::get('2', 'Tp1@rqt2');
