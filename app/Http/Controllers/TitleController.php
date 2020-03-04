@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Employee;
+use App\Http\Requests\TitleRequest;
+use App\Title;
 use Illuminate\Http\Request;
 
 class TitleController extends Controller
@@ -23,12 +25,29 @@ class TitleController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Employee $employee
+     * @param TitleRequest $request
+     * @return string
      */
-    public function store(Request $request)
+    public function store(Employee $employee, TitleRequest $request)
     {
-        //
+        $data = $request->validated();
+        $data['emp_no'] = $employee->emp_no;
+        $data['from_date'] = date('Y-m-d');
+        $data['to_date'] = '9999-01-01';
+
+        $lastTitle = $employee->titles()->where('to_date', '9999-01-01')->first();
+        /*$lastTitle = Title::where([
+            ['to_date', '9999-01-01'],
+            ['emp_no', $employee->emp_no],
+        ])->first();*/
+        $lastTitle['to_date'] = date('Y-m-d');
+        $lastTitle->save();
+
+        //$title = $employee->titles()->create($data);
+        $newTitle = Title::create($data);
+
+        return $newTitle->toJson();
     }
 
     /**
@@ -42,32 +61,9 @@ class TitleController extends Controller
     {
         $title = $employee->titles()
             ->orderBy('to_date')
-            ->offset($id - 1)
+            ->offset($id)
             ->limit($id)->get();
 
         return $title->toJson();
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

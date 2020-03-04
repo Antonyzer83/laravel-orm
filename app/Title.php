@@ -25,6 +25,10 @@ class Title extends Model
      */
     protected $primaryKey = 'emp_no';
 
+    public $timestamps = false;
+
+    public $incrementing = false;
+
     /**
      * The relationship between titles and employees
      * One title can be only for one employee
