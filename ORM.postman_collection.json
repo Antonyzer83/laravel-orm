@@ -594,6 +594,28 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "employees.isManager",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://castaner-vm.local/api/employees/110039/isManager",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"employees",
+								"110039",
+								"isManager"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -815,7 +837,7 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "antony@mail.fr",
+									"value": "georgi.facello@employees.edu",
 									"type": "text"
 								},
 								{
