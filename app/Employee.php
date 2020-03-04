@@ -72,4 +72,15 @@ class Employee extends Model
     {
         return $this->belongsToMany('App\Title', 'employees', 'emp_no', 'emp_no');
     }
+
+    /**
+     * The relationship between employees and users
+     * An employee has one user
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function user()
+    {
+        return $this->hasOne('App\User', 'emp_no', 'emp_no');
+    }
 }

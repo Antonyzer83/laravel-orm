@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'emp_no', 'email', 'password',
     ];
 
     /**
@@ -36,4 +36,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * The relationship between employees and users
+     * An user has one employee
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function employee()
+    {
+        return $this->hasOne('App\Employee', 'emp_no', 'emp_no');
+    }
 }
