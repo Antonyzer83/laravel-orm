@@ -1,0 +1,713 @@
+{
+	"info": {
+		"_postman_id": "9f4b90f5-a205-433a-bc65-831aabe5cc96",
+		"name": "ORM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "employees.index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://castaner-vm.local/api/employees",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employees.show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://castaner-vm.local/api/employees/10001",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"employees",
+								"10001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employees.store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "birth_date",
+									"value": "2000-07-03",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "Antony",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "CASTANER",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "M",
+									"type": "text"
+								},
+								{
+									"key": "hire_date",
+									"value": "2020-03-03",
+									"type": "text"
+								},
+								{
+									"key": "emp_no",
+									"value": "555556",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://castaner-vm.local/api/employees",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"employees"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "employees.store",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "birth_date",
+											"value": "2000-07-03",
+											"type": "text"
+										},
+										{
+											"key": "first_name",
+											"value": "Antony",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "CASTANER",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "hire_date",
+											"value": "2020-03-03",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://castaner-vm.local/api/employees",
+									"protocol": "http",
+									"host": [
+										"castaner-vm",
+										"local"
+									],
+									"path": [
+										"api",
+										"employees"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 03 Mar 2020 09:14:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.38 (Debian)"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Length",
+									"value": "117"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"birth_date\": \"2000-07-03\",\n    \"first_name\": \"Antony\",\n    \"last_name\": \"CASTANER\",\n    \"gender\": \"M\",\n    \"hire_date\": \"2020-03-03\",\n    \"emp_no\": 500008\n}"
+						}
+					]
+				},
+				{
+					"name": "employees.update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "birth_date",
+									"value": "2000-07-03",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "first_name",
+									"value": "Antony",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "last_name",
+									"value": "CASTANER",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "gender",
+									"value": "K",
+									"type": "text"
+								},
+								{
+									"key": "hire_date",
+									"value": "2020-03-03",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://castaner-vm.local/api/employees/10001",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"employees",
+								"10001"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "employees.update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "birth_date",
+											"value": "2000-07-03",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "first_name",
+											"value": "Antony",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "last_name",
+											"value": "CASTANER",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "gender",
+											"value": "F",
+											"type": "text"
+										},
+										{
+											"key": "hire_date",
+											"value": "2020-03-03",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://castaner-vm.local/api/employees/10001",
+									"protocol": "http",
+									"host": [
+										"castaner-vm",
+										"local"
+									],
+									"path": [
+										"api",
+										"employees",
+										"10001"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 03 Mar 2020 09:16:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.38 (Debian)"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Length",
+									"value": "116"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\"emp_no\":10001,\"birth_date\":\"1953-09-02\",\"first_name\":\"Georgi\",\"last_name\":\"Facello\",\"gender\":\"F\",\"hire_date\":\"1986-06-26\"}"
+						}
+					]
+				},
+				{
+					"name": "employees.delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://castaner-vm.local/api/employees/500000",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"employees",
+								"500000"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Departments",
+			"item": [
+				{
+					"name": "departments.index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://castaner-vm.local/api/departments",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "departments.show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://castaner-vm.local/api/departments/d009",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"departments",
+								"d009"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "departments.store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "dept_no",
+									"value": "d099",
+									"type": "text"
+								},
+								{
+									"key": "dept_name",
+									"value": "YNOV",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://castaner-vm.local/api/departments",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "departments.update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "dept_name",
+									"value": "PASYNOV",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://castaner-vm.local/api/departments/d099",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"departments",
+								"d099"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "departments.delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://castaner-vm.local/api/departments/d099",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"departments",
+								"d099"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "antony@mail.fr",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "azertyuiop",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://castaner-vm.local/api/login",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Antony",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "antony@mail.fr",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "azertyuiop",
+									"type": "text"
+								},
+								{
+									"key": "c_password",
+									"value": "azertyuiop",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://castaner-vm.local/api/register",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
