@@ -12,6 +12,7 @@ class Title extends Model
      * @var array
      */
     protected $fillable = [
+        'emp_no',
         'title',
         'from_date',
         'to_date'
