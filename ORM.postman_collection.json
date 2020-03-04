@@ -6,6 +6,164 @@
 	},
 	"item": [
 		{
+			"name": "Departments",
+			"item": [
+				{
+					"name": "departments.index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://castaner-vm.local/api/departments",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "departments.show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://castaner-vm.local/api/departments/d009",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"departments",
+								"d009"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "departments.store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "dept_no",
+									"value": "d099",
+									"type": "text"
+								},
+								{
+									"key": "dept_name",
+									"value": "YNOV",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://castaner-vm.local/api/departments",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "departments.update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "dept_name",
+									"value": "PASYNOV",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://castaner-vm.local/api/departments/d099",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"departments",
+								"d099"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "departments.delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://castaner-vm.local/api/departments/d099",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"departments",
+								"d099"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "Employees",
 			"item": [
 				{
@@ -441,15 +599,15 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Departments",
+			"name": "Titles",
 			"item": [
 				{
-					"name": "departments.index",
+					"name": "titles.index",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://castaner-vm.local/api/departments",
+							"raw": "http://castaner-vm.local/api/employees/10005/titles",
 							"protocol": "http",
 							"host": [
 								"castaner-vm",
@@ -457,19 +615,28 @@
 							],
 							"path": [
 								"api",
-								"departments"
+								"employees",
+								"10005",
+								"titles"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "departments.show",
+					"name": "titles.show",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://castaner-vm.local/api/departments/d009",
+							"raw": "http://castaner-vm.local/api/employees/10005/titles/2",
 							"protocol": "http",
 							"host": [
 								"castaner-vm",
@@ -477,27 +644,29 @@
 							],
 							"path": [
 								"api",
-								"departments",
-								"d009"
+								"employees",
+								"10005",
+								"titles",
+								"2"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "departments.store",
+					"name": "titles.store",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/x-www-form-urlencoded",
+								"key": "Accept",
+								"value": "application/json",
 								"type": "text"
 							},
 							{
-								"key": "Accept",
-								"value": "application/json",
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
 								"type": "text"
 							}
 						],
@@ -505,19 +674,14 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "dept_no",
-									"value": "d099",
-									"type": "text"
-								},
-								{
-									"key": "dept_name",
-									"value": "YNOV",
+									"key": "title",
+									"value": "Proxénète",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://castaner-vm.local/api/departments",
+							"raw": "http://castaner-vm.local/api/employees/10005/titles",
 							"protocol": "http",
 							"host": [
 								"castaner-vm",
@@ -525,71 +689,9 @@
 							],
 							"path": [
 								"api",
-								"departments"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "departments.update",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/x-www-form-urlencoded",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "dept_name",
-									"value": "PASYNOV",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://castaner-vm.local/api/departments/d099",
-							"protocol": "http",
-							"host": [
-								"castaner-vm",
-								"local"
-							],
-							"path": [
-								"api",
-								"departments",
-								"d099"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "departments.delete",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://castaner-vm.local/api/departments/d099",
-							"protocol": "http",
-							"host": [
-								"castaner-vm",
-								"local"
-							],
-							"path": [
-								"api",
-								"departments",
-								"d099"
+								"employees",
+								"10005",
+								"titles"
 							]
 						}
 					},
