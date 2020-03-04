@@ -597,6 +597,116 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "antony@mail.fr",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "azertyuiop",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://castaner-vm.local/api/login",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Antony",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "antony@mail.fr",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "azertyuiop",
+									"type": "text"
+								},
+								{
+									"key": "c_password",
+									"value": "azertyuiop",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://castaner-vm.local/api/register",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"protocolProfileBehavior": {}
