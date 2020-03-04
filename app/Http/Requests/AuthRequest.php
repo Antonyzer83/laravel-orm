@@ -32,7 +32,7 @@ class AuthRequest extends FormRequest
         } else {
             $rules = [
                 'name' => 'required|string',
-                'email' => 'required|email',
+                'email' => 'required|email|unique:users,email',
                 'password' => 'required|string',
                 'c_password' => 'required|string|same:password',
             ];
