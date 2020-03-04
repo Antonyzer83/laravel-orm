@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Employee;
-use Illuminate\Http\Request;
+use App\Http\Requests\SalaryRequest;
+use App\Salary;
 
 class SalaryController extends Controller
 {
@@ -23,12 +24,24 @@ class SalaryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Employee $employee
+     * @param SalaryRequest $request
+     * @return void
      */
-    public function store(Request $request)
+    public function store(Employee $employee, SalaryRequest $request)
     {
-        //
+        $data = $request->validated();
+        $data['emp_no'] = $employee->emp_no;
+        $data['from_date'] = date('Y-m-d');
+        $data['to_date'] = '9999-01-01';
+
+        $employee->salaries()
+            ->where('to_date', '9999-01-01')
+            ->update(['to_date' => date('Y-m-d')]);
+
+        $newSalary = Salary::create($data);
+
+        return $newSalary->toJson();
     }
 
     /**

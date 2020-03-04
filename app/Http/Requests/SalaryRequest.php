@@ -28,7 +28,7 @@ class SalaryRequest extends FormRequest
         ];
 
         if ($this->isMethod('POST')) {
-            $rules['title'] .= '|required';
+            $rules['salary'] .= '|required';
         }
 
         return $rules;

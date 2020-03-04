@@ -19,10 +19,15 @@ class Salary extends Model
      * @var array
      */
     protected $fillable = [
+        'emp_no',
         'salary',
         'from_date',
         'to_date'
     ];
+
+    public $timestamps = false;
+
+    public $incrementing = false;
 
     /**
      * The primary key associated with the table.

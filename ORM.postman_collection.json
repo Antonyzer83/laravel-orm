@@ -636,7 +636,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://castaner-vm.local/api/employees/10005/titles/2",
+							"raw": "http://castaner-vm.local/api/employees/10005/titles/3",
 							"protocol": "http",
 							"host": [
 								"castaner-vm",
@@ -647,7 +647,7 @@
 								"employees",
 								"10005",
 								"titles",
-								"2"
+								"3"
 							]
 						}
 					},
@@ -692,6 +692,96 @@
 								"employees",
 								"10005",
 								"titles"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Salaries",
+			"item": [
+				{
+					"name": "salaries.index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://castaner-vm.local/api/employees/10005/salaries",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"employees",
+								"10005",
+								"salaries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "salaries.show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://castaner-vm.local/api/employees/10005/salaries/1",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"employees",
+								"10005",
+								"salaries",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "salaries.store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "salary",
+									"value": "99500",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://castaner-vm.local/api/employees/10005/salaries",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"employees",
+								"10005",
+								"salaries"
 							]
 						}
 					},
