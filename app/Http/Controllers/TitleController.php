@@ -36,15 +36,10 @@ class TitleController extends Controller
         $data['from_date'] = date('Y-m-d');
         $data['to_date'] = '9999-01-01';
 
-        $lastTitle = $employee->titles()->where('to_date', '9999-01-01')->first();
-        /*$lastTitle = Title::where([
-            ['to_date', '9999-01-01'],
-            ['emp_no', $employee->emp_no],
-        ])->first();*/
-        $lastTitle['to_date'] = date('Y-m-d');
-        $lastTitle->save();
+        $employee->titles()
+            ->where('to_date', '9999-01-01')
+            ->update(['to_date' => date('Y-m-d')]);
 
-        //$title = $employee->titles()->create($data);
         $newTitle = Title::create($data);
 
         return $newTitle->toJson();
