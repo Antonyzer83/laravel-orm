@@ -10,12 +10,12 @@ class TitleController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param $emp_no
-     * @return void
+     * @param Employee $employee
+     * @return string
      */
-    public function index($emp_no)
+    public function index(Employee $employee)
     {
-        $titles = Employee::find($emp_no)->titles()->get();
+        $titles = $employee->titles()->get();
 
         return $titles->toJson();
     }
@@ -34,12 +34,18 @@ class TitleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Employee $employee
+     * @param int $id
+     * @return string
      */
-    public function show($id)
+    public function show(Employee $employee, $id)
     {
-        //
+        $title = $employee->titles()
+            ->orderBy('to_date')
+            ->offset($id - 1)
+            ->limit($id)->get();
+
+        return $title->toJson();
     }
 
     /**
