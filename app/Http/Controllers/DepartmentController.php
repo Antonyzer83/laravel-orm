@@ -58,18 +58,4 @@ class DepartmentController extends Controller
 
         return $department->toJson();
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param Department $department
-     * @return \Illuminate\Http\Response
-     * @throws \Exception
-     */
-    public function destroy(Department $department)
-    {
-        $d = $department;
-        $department->delete();
-        return $d->toJson();
-    }
 }
