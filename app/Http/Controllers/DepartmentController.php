@@ -58,4 +58,19 @@ class DepartmentController extends Controller
 
         return $department->toJson();
     }
+
+    /**
+     * Get all current employees from a department
+     *
+     * @param $id
+     * @return mixed
+     */
+    public function employees($id)
+    {
+        $department = Department::find($id);
+
+        $employees = $department->employees()->where('to_date', '9999-01-01')->get();
+
+        return $employees->toJson();
+    }
 }
