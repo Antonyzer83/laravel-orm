@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Department;
+use App\Employee;
 use App\Http\Requests\DepartmentRequest;
 
 class DepartmentController extends Controller
@@ -68,6 +69,8 @@ class DepartmentController extends Controller
     public function employees($id)
     {
         $department = Department::find($id);
+
+        $this->authorize('myEmployees', $department);
 
         $employees = $department->employees()->where('to_date', '9999-01-01')->get();
 

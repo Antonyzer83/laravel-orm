@@ -2,8 +2,6 @@
 
 namespace App\Policies;
 
-use App\Department;
-use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class EmployeePolicy
@@ -18,10 +16,5 @@ class EmployeePolicy
     public function __construct()
     {
         //
-    }
-
-    public function myEmployees(User $user, Department $department)
-    {
-        return ($user->employee()->isManager());
     }
 }
