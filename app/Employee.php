@@ -98,10 +98,15 @@ class Employee extends Model
         return $status;
     }
 
+    /**
+     * Get the current department
+     *
+     * @return mixed
+     */
     public function myDepartment()
     {
         $department = $this->departments()->where('to_date', '9999-01-01')->first();
 
-        return $department->dept_no;
+        return $department;
     }
 }

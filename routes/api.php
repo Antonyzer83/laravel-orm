@@ -24,6 +24,7 @@ Route::apiResource('employees.titles', 'TitleController');
 Route::apiResource('employees.salaries', 'SalaryController');
 
 Route::get('employees/{id}/isManager', 'EmployeeController@isManager');
+Route::get('employees/{id}/myDepartment', 'EmployeeController@myDepartment');
 
 /*
 Route::get('1', 'Tp1@rqt1');

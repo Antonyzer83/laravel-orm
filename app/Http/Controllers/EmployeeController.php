@@ -88,4 +88,20 @@ class EmployeeController extends Controller
 
         return ['status' => null];
     }
+
+    /**
+     * Get the current department of one employee
+     *
+     * @param $id
+     * @return array
+     */
+    public function myDepartment($id)
+    {
+        $employee = Employee::find($id);
+
+        if ($employee !== null)
+            return ['department' => $employee->myDepartment()];
+
+        return ['department' => null];
+    }
 }
