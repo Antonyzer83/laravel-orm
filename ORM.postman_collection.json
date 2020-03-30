@@ -12,7 +12,13 @@
 					"name": "departments.index",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://castaner-vm.local/api/departments",
 							"protocol": "http",
@@ -32,7 +38,13 @@
 					"name": "departments.show",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://castaner-vm.local/api/departments/d009",
 							"protocol": "http",
@@ -140,12 +152,28 @@
 					"response": []
 				},
 				{
-					"name": "departments.delete",
+					"name": "departments.employees",
 					"request": {
-						"method": "DELETE",
-						"header": [],
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjE5OWRjZDlkZGIxMDNjMGIxMGI5MGI3OWJkMTc1NDBhM2NjOWM1YmExMjczNzY3MWQyZmJmNjZhYTRmMmRjZTU1MTNiNjNmYzQ2ZGJiZGMiLCJpYXQiOjE1ODU1ODI0NjQsIm5iZiI6MTU4NTU4MjQ2NCwiZXhwIjoxNjE3MTE4NDY0LCJzdWIiOiIxMTE5MzkiLCJzY29wZXMiOltdfQ.U4RWBUXVR7AD2B3M7rjBG9uLIasDP92MCam3BweR5qh5oURrgWoIeUA_YhtiN6JsUJ7xw_uSjC1DtIPsUCFXkMURwC7DAtTFElygfF-TzCj3qIG5GbCtKUws8Gxry-0VH6fL31sKyHeIfBJzd_NOABBJkhvbyVoZa1qevsJUVPMKP1NmkWbTOUkYpWlQK2PqVFBTWtbABqVWXuphGV3BeEQ08YUdNSZ77U8qSx25gp95KHR30_Sfq1VaHqjYKvZ75fvKIF3zImEyAr362mK04PX8brhc1W4oinK9EfiWAFM9D2M1xY-LUVbLSQj8dfnRLLa_pGTxtzzxDSvVyO0f9DesWhWCI4Ibd-7cKZnhKnf9tgoSJETgFRqodPec4IeR-lbDlh74AstOvXLOu17O4-ikz-R7XNGbvP3GWtSQwtY-pNp17ARWngAstxN-iI97g4AVg4fSiwR_ob5_EC2Zi50enmWnNKfJkDiUgPf4NgJCKuvUyzQwDlRoDVD1JruLUUxbcjUzOImAF9u6UoHtaa285IuQjecgvVMNum3uhZMUnAPQue90xDA8G6Chn1Q_aw_MgxUepVPkmqMqyGrIRD9VrBjFpAAxNWe4yfAxxSg0S2S52WR7ecdKZzWIAu9S8e1Izd8_jEs7cMfUil6O7sM8wHE66rJPpSqi4Mg4S2A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://castaner-vm.local/api/departments/d099",
+							"raw": "http://castaner-vm.local/api/departments/d009/employees",
 							"protocol": "http",
 							"host": [
 								"castaner-vm",
@@ -154,7 +182,8 @@
 							"path": [
 								"api",
 								"departments",
-								"d099"
+								"d009",
+								"employees"
 							]
 						}
 					},
@@ -170,7 +199,13 @@
 					"name": "employees.index",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://castaner-vm.local/api/employees",
 							"protocol": "http",
@@ -190,7 +225,13 @@
 					"name": "employees.show",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://castaner-vm.local/api/employees/10001",
 							"protocol": "http",
@@ -210,6 +251,16 @@
 				{
 					"name": "employees.store",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzFhNWRmYzNhZDQzNjE4M2NkYzc3NWVjNmQxMzg5NGNiOTlkMjMzNDE4ODFhYTFkYTY5MWY3NjU0ODNkNDVhZWI3ZjBlNDA2ZWViODIzYzIiLCJpYXQiOjE1ODU1ODMxOTMsIm5iZiI6MTU4NTU4MzE5MywiZXhwIjoxNjE3MTE5MTkzLCJzdWIiOiIxMTE5MzkiLCJzY29wZXMiOltdfQ.atC2eeAYsF-JNLsjlWKqsZHNOzDH6nZfwDdVwIuHTQcSNhQgiOl88qF6E3xNjjjC2xnyeXjD2pO0hxiQaYdTK1wP8M7luaSt43fvEz3wixJ1PEo4HgQT_0d1-1XxObHLKxdn8YhYHY6jTraRi1LZzQqJ9kiwGKjlxBMGAhIgqHYP2VqZ3HvYBEacIX1JbeQ7W4L6_rqx69H0fHwPlLO2o8YwhZx-DU01becKf2ld5BQlFLk9cZNP9IjfoUDI2SbIVRRcrz_Ry552TOL8axLkRBXu1fAFDdORYkGtfa9C01bT4s4dnre98LQGbzkPkfWoOh1617250bJXgD2jn7dYvL2uxHc9W4mmPQmdsFUCbCCd8G6WaKldCgibHKYEgWmrNkTVubY3iDRvYcCHq10FAkMnCoZ8HVGuxaLo5RV4BSFM48fkpzeNQRr1uL_yAqEHgCNoYJs-zybS2XOQf_ZdVR15h6oGKCM99lNfqT0J3jt0Sk7xQoUujxjKZFwvzsBX1uNFMXk7ZAoqntPIA-3OKIOLiqtm9tL2wtl-jaglunCJnkAB3aeZQOAJKD-Md_SEL-qPi5MxWYUmYF_AAzVygp8Hu5nk12-DlnGJizAACCefOdIBxctnhCFBRyjrd1VlOanMkW7lbMYJLqdxFsOr8tB9l2Bhmpwh93ucYzaDqPs",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -254,7 +305,7 @@
 								},
 								{
 									"key": "emp_no",
-									"value": "555556",
+									"value": "555559",
 									"type": "text"
 								}
 							]
@@ -578,7 +629,13 @@
 					"name": "employees.delete",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://castaner-vm.local/api/employees/500000",
 							"protocol": "http",
@@ -599,7 +656,13 @@
 					"name": "employees.isManager",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://castaner-vm.local/api/employees/110039/isManager",
 							"protocol": "http",
@@ -616,6 +679,34 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "employees.myDepartment",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://castaner-vm.local/api/employees/110039/myDepartment",
+							"protocol": "http",
+							"host": [
+								"castaner-vm",
+								"local"
+							],
+							"path": [
+								"api",
+								"employees",
+								"110039",
+								"myDepartment"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -627,7 +718,13 @@
 					"name": "titles.index",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://castaner-vm.local/api/employees/10005/titles",
 							"protocol": "http",
@@ -654,6 +751,11 @@
 								"key": "Content-Type",
 								"name": "Content-Type",
 								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
 								"type": "text"
 							}
 						],
@@ -729,7 +831,13 @@
 					"name": "salaries.index",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://castaner-vm.local/api/employees/10005/salaries",
 							"protocol": "http",
@@ -751,7 +859,13 @@
 					"name": "salaries.show",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://castaner-vm.local/api/employees/10005/salaries/1",
 							"protocol": "http",
@@ -779,6 +893,11 @@
 								"key": "Content-Type",
 								"name": "Content-Type",
 								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
 								"type": "text"
 							}
 						],
@@ -837,13 +956,19 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "georgi.facello@employees.edu",
+									"value": "yuchang.weedman@employees.edu",
 									"type": "text"
 								},
 								{
 									"key": "password",
 									"value": "azertyuiop",
 									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "georgi.facello@employees.edu",
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
