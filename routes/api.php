@@ -17,15 +17,16 @@ use Illuminate\Http\Request;
 Route::post('login', 'AuthController@login');
 Route::post('register', 'AuthController@register');
 
-Route::apiResource('employees', 'EmployeeController');
-Route::apiResource('departments', 'DepartmentController');
-Route::get('departments/{id}/employees', 'DepartmentController@employees');
-Route::apiResource('employees.titles', 'TitleController');
-Route::apiResource('employees.salaries', 'SalaryController');
+Route::middleware('auth:api')->group( function() {
+    Route::apiResource('employees', 'EmployeeController');
+    Route::apiResource('departments', 'DepartmentController');
+    Route::get('departments/{id}/employees', 'DepartmentController@employees');
+    Route::apiResource('employees.titles', 'TitleController');
+    Route::apiResource('employees.salaries', 'SalaryController');
 
-Route::get('employees/{id}/isManager', 'EmployeeController@isManager');
-Route::get('employees/{id}/myDepartment', 'EmployeeController@myDepartment');
-
+    Route::get('employees/{id}/isManager', 'EmployeeController@isManager');
+    Route::get('employees/{id}/myDepartment', 'EmployeeController@myDepartment');
+});
 /*
 Route::get('1', 'Tp1@rqt1');
 Route::get('2', 'Tp1@rqt2');
