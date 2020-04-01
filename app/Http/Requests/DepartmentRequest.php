@@ -24,7 +24,7 @@ class DepartmentRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'dept_no' => 'min:4|max:4|unique:departments,dept_no',
+            'dept_no' => 'regex:/^d[0-9]{3}$/|unique:departments,dept_no',
             'dept_name' => 'string|max:40'
         ];
 
