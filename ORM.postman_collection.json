@@ -11,6 +11,16 @@
 				{
 					"name": "departments.index",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTJkNzg2N2JiYWJhOWMyMzcxZDM4YWJmM2E4ODFjMGI3OGRkNjk4YTQ2YmMwZjA1NTM4ZTM0ZTAzZDZhZDJjYzA1NDEzNzM5OWIyZTZiMjIiLCJpYXQiOjE1ODU3MzEyMzMsIm5iZiI6MTU4NTczMTIzMywiZXhwIjoxNjE3MjY3MjMzLCJzdWIiOiIxMTA1NjciLCJzY29wZXMiOltdfQ.npmyaG-1FnDy5yY6h5vK3p7zWt3cDgn8Akw5CllWU8McEbYf2pG8pw_71FO2oO6uwgRA3luRNIUnabT5xQJs0DyWhpiBkHPGAYVcbxgRo_cUnMwHpSB1dln9B2_melEvihlbTFpIOpetIiJfBw6f6ihr8H_IU7svyKpP0p31lMy9Fl_6k9RZ9DTVOCfNBWR_s95wYbm_dAHJM8_UhyLH7MIO4sFWu2VvlZ6vExH6NNdaFuCzNwr6akH_4po47-Qz2SchfPe5Wayvhqb1b6hRyPf05GdoAjL8xN_Uap_Cq1K3-EI03Z6q-L1djFZI5NwcNGOeJugnr_ZI9wto2o4rhQ4JvtWB-VhHhpWRTKLnRm7o73-nW7jQ3KGNo9zO58qzliTzm7Zw5-81RzMbctK2Uu8gqbvDbI5m3t5r3iTxFopnbs0GhQ-tGfM_cuM0YlgieTeh6wx7YtJ8WPdiew2kjdOsXKpLsLYvo_O-iFmzCeeZbfk-syEz0E0ALbusOAY1pNb7kYz-qO7vgEpMxaR-A_VvkqPV86PyADa0RTDZ9s2Xtk2Hl6Qm9_fcGDc1VstaOQmpCwVN46BLOAhK9jiVi1enJxdo_yRfrVC6QPGrFynpJzkBl62OEpAoGlJb8OCrCTcZSx7makYTKo7r-28E8UZFIvgOyt5hEYxqpXYFzps",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -64,6 +74,16 @@
 				{
 					"name": "departments.store",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTJkNzg2N2JiYWJhOWMyMzcxZDM4YWJmM2E4ODFjMGI3OGRkNjk4YTQ2YmMwZjA1NTM4ZTM0ZTAzZDZhZDJjYzA1NDEzNzM5OWIyZTZiMjIiLCJpYXQiOjE1ODU3MzEyMzMsIm5iZiI6MTU4NTczMTIzMywiZXhwIjoxNjE3MjY3MjMzLCJzdWIiOiIxMTA1NjciLCJzY29wZXMiOltdfQ.npmyaG-1FnDy5yY6h5vK3p7zWt3cDgn8Akw5CllWU8McEbYf2pG8pw_71FO2oO6uwgRA3luRNIUnabT5xQJs0DyWhpiBkHPGAYVcbxgRo_cUnMwHpSB1dln9B2_melEvihlbTFpIOpetIiJfBw6f6ihr8H_IU7svyKpP0p31lMy9Fl_6k9RZ9DTVOCfNBWR_s95wYbm_dAHJM8_UhyLH7MIO4sFWu2VvlZ6vExH6NNdaFuCzNwr6akH_4po47-Qz2SchfPe5Wayvhqb1b6hRyPf05GdoAjL8xN_Uap_Cq1K3-EI03Z6q-L1djFZI5NwcNGOeJugnr_ZI9wto2o4rhQ4JvtWB-VhHhpWRTKLnRm7o73-nW7jQ3KGNo9zO58qzliTzm7Zw5-81RzMbctK2Uu8gqbvDbI5m3t5r3iTxFopnbs0GhQ-tGfM_cuM0YlgieTeh6wx7YtJ8WPdiew2kjdOsXKpLsLYvo_O-iFmzCeeZbfk-syEz0E0ALbusOAY1pNb7kYz-qO7vgEpMxaR-A_VvkqPV86PyADa0RTDZ9s2Xtk2Hl6Qm9_fcGDc1VstaOQmpCwVN46BLOAhK9jiVi1enJxdo_yRfrVC6QPGrFynpJzkBl62OEpAoGlJb8OCrCTcZSx7makYTKo7r-28E8UZFIvgOyt5hEYxqpXYFzps",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -83,12 +103,12 @@
 							"urlencoded": [
 								{
 									"key": "dept_no",
-									"value": "d099",
+									"value": "d100",
 									"type": "text"
 								},
 								{
 									"key": "dept_name",
-									"value": "YNOV",
+									"value": "YNOVBIS",
 									"type": "text"
 								}
 							]
@@ -159,7 +179,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjE5OWRjZDlkZGIxMDNjMGIxMGI5MGI3OWJkMTc1NDBhM2NjOWM1YmExMjczNzY3MWQyZmJmNjZhYTRmMmRjZTU1MTNiNjNmYzQ2ZGJiZGMiLCJpYXQiOjE1ODU1ODI0NjQsIm5iZiI6MTU4NTU4MjQ2NCwiZXhwIjoxNjE3MTE4NDY0LCJzdWIiOiIxMTE5MzkiLCJzY29wZXMiOltdfQ.U4RWBUXVR7AD2B3M7rjBG9uLIasDP92MCam3BweR5qh5oURrgWoIeUA_YhtiN6JsUJ7xw_uSjC1DtIPsUCFXkMURwC7DAtTFElygfF-TzCj3qIG5GbCtKUws8Gxry-0VH6fL31sKyHeIfBJzd_NOABBJkhvbyVoZa1qevsJUVPMKP1NmkWbTOUkYpWlQK2PqVFBTWtbABqVWXuphGV3BeEQ08YUdNSZ77U8qSx25gp95KHR30_Sfq1VaHqjYKvZ75fvKIF3zImEyAr362mK04PX8brhc1W4oinK9EfiWAFM9D2M1xY-LUVbLSQj8dfnRLLa_pGTxtzzxDSvVyO0f9DesWhWCI4Ibd-7cKZnhKnf9tgoSJETgFRqodPec4IeR-lbDlh74AstOvXLOu17O4-ikz-R7XNGbvP3GWtSQwtY-pNp17ARWngAstxN-iI97g4AVg4fSiwR_ob5_EC2Zi50enmWnNKfJkDiUgPf4NgJCKuvUyzQwDlRoDVD1JruLUUxbcjUzOImAF9u6UoHtaa285IuQjecgvVMNum3uhZMUnAPQue90xDA8G6Chn1Q_aw_MgxUepVPkmqMqyGrIRD9VrBjFpAAxNWe4yfAxxSg0S2S52WR7ecdKZzWIAu9S8e1Izd8_jEs7cMfUil6O7sM8wHE66rJPpSqi4Mg4S2A",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDdhNjUxMWMxOWU1YzJlYmUwNGUxNzRkMTY4MGJmMWM1YWQ1NDUxNjU5ZDFiZGUyNDk5NDY1ZDMxZTFkNjExNTc4YzA0MjFmMmQ2NDU0YjgiLCJpYXQiOjE1ODU3MjE4ODksIm5iZiI6MTU4NTcyMTg4OSwiZXhwIjoxNjE3MjU3ODg5LCJzdWIiOiIxMTE5MzkiLCJzY29wZXMiOltdfQ.UDjutkhxMqaJhkrOXPAe4UlPML0VKQfa1w5XpWJbzlo8S2jDRHA-zkDv2Ej0JzPvyN-scOrBCO9dvbjWKMJ331tfTJgeXJVGhGkWva54GwDU4DiA4Ehs7i5SiMVQnii7ITzRn9b24-nfdQDnlRXlcBDd2eWLKs1gd4MbIEJuKK5lW09iUFcDALt89uGt68e5W4gY54EPORVZEA9UtrtVbsCDwV0HAmKGdLk1Dr_HTqB_8pcTyUvC9eUKp8VqorGQx3el_jV9_IZSbikK-1MLp9M78vNEIYeD2o1LXSFnqm26RC1AcKcQ_2uolHd_SIRCdmc9sGEi-mW9c9a3UNyaeGwk_Ju3wOPAm2zm2NR6OEvZQpqdnZUMvRkw-0RjYsMwItCBXBfGbctAH9_otUU2A3ynOcPtQ4fA2AVktz2ctbBVpR3S4v6Fr7KVg_mtP1Ua_cBqsFbogBYqbDCtvuMaA3Y2EM5xS0uwlwYpZ0ivq2MKtBlGN-Jc8Fux4ETK1u-w5JGXCTh0QRj8i6ufEVdCx_QUsVZoVI9j3HberKIVCPhos77hzei7-kExwRZn4nOw-WLTfVdb0u5v9AvwqYRirbXLMghJ_zjOuLiIKrsNfLVhRYGhnGfePhpqrztvfofPteclR1WPI4q5bXOlXyoSqQmPceo389jXHeAF6I9zgDU",
 									"type": "string"
 								}
 							]
@@ -256,7 +276,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzFhNWRmYzNhZDQzNjE4M2NkYzc3NWVjNmQxMzg5NGNiOTlkMjMzNDE4ODFhYTFkYTY5MWY3NjU0ODNkNDVhZWI3ZjBlNDA2ZWViODIzYzIiLCJpYXQiOjE1ODU1ODMxOTMsIm5iZiI6MTU4NTU4MzE5MywiZXhwIjoxNjE3MTE5MTkzLCJzdWIiOiIxMTE5MzkiLCJzY29wZXMiOltdfQ.atC2eeAYsF-JNLsjlWKqsZHNOzDH6nZfwDdVwIuHTQcSNhQgiOl88qF6E3xNjjjC2xnyeXjD2pO0hxiQaYdTK1wP8M7luaSt43fvEz3wixJ1PEo4HgQT_0d1-1XxObHLKxdn8YhYHY6jTraRi1LZzQqJ9kiwGKjlxBMGAhIgqHYP2VqZ3HvYBEacIX1JbeQ7W4L6_rqx69H0fHwPlLO2o8YwhZx-DU01becKf2ld5BQlFLk9cZNP9IjfoUDI2SbIVRRcrz_Ry552TOL8axLkRBXu1fAFDdORYkGtfa9C01bT4s4dnre98LQGbzkPkfWoOh1617250bJXgD2jn7dYvL2uxHc9W4mmPQmdsFUCbCCd8G6WaKldCgibHKYEgWmrNkTVubY3iDRvYcCHq10FAkMnCoZ8HVGuxaLo5RV4BSFM48fkpzeNQRr1uL_yAqEHgCNoYJs-zybS2XOQf_ZdVR15h6oGKCM99lNfqT0J3jt0Sk7xQoUujxjKZFwvzsBX1uNFMXk7ZAoqntPIA-3OKIOLiqtm9tL2wtl-jaglunCJnkAB3aeZQOAJKD-Md_SEL-qPi5MxWYUmYF_AAzVygp8Hu5nk12-DlnGJizAACCefOdIBxctnhCFBRyjrd1VlOanMkW7lbMYJLqdxFsOr8tB9l2Bhmpwh93ucYzaDqPs",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTJkNzg2N2JiYWJhOWMyMzcxZDM4YWJmM2E4ODFjMGI3OGRkNjk4YTQ2YmMwZjA1NTM4ZTM0ZTAzZDZhZDJjYzA1NDEzNzM5OWIyZTZiMjIiLCJpYXQiOjE1ODU3MzEyMzMsIm5iZiI6MTU4NTczMTIzMywiZXhwIjoxNjE3MjY3MjMzLCJzdWIiOiIxMTA1NjciLCJzY29wZXMiOltdfQ.npmyaG-1FnDy5yY6h5vK3p7zWt3cDgn8Akw5CllWU8McEbYf2pG8pw_71FO2oO6uwgRA3luRNIUnabT5xQJs0DyWhpiBkHPGAYVcbxgRo_cUnMwHpSB1dln9B2_melEvihlbTFpIOpetIiJfBw6f6ihr8H_IU7svyKpP0p31lMy9Fl_6k9RZ9DTVOCfNBWR_s95wYbm_dAHJM8_UhyLH7MIO4sFWu2VvlZ6vExH6NNdaFuCzNwr6akH_4po47-Qz2SchfPe5Wayvhqb1b6hRyPf05GdoAjL8xN_Uap_Cq1K3-EI03Z6q-L1djFZI5NwcNGOeJugnr_ZI9wto2o4rhQ4JvtWB-VhHhpWRTKLnRm7o73-nW7jQ3KGNo9zO58qzliTzm7Zw5-81RzMbctK2Uu8gqbvDbI5m3t5r3iTxFopnbs0GhQ-tGfM_cuM0YlgieTeh6wx7YtJ8WPdiew2kjdOsXKpLsLYvo_O-iFmzCeeZbfk-syEz0E0ALbusOAY1pNb7kYz-qO7vgEpMxaR-A_VvkqPV86PyADa0RTDZ9s2Xtk2Hl6Qm9_fcGDc1VstaOQmpCwVN46BLOAhK9jiVi1enJxdo_yRfrVC6QPGrFynpJzkBl62OEpAoGlJb8OCrCTcZSx7makYTKo7r-28E8UZFIvgOyt5hEYxqpXYFzps",
 									"type": "string"
 								}
 							]
@@ -305,7 +325,7 @@
 								},
 								{
 									"key": "emp_no",
-									"value": "555559",
+									"value": "555789",
 									"type": "text"
 								}
 							]
@@ -436,6 +456,16 @@
 				{
 					"name": "employees.update",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzg3ZTAzN2JkYmU1Yzk3ZTgwOWRlZjk4MjYzNDE1MWJiZWE4ZGIxZDE2ODM4MzdhMmUzMzQ2NjhmNDdjZWM1YjRhNGNiZDU5MmZjZTQ5ZGMiLCJpYXQiOjE1ODU3MzQ1MjQsIm5iZiI6MTU4NTczNDUyNCwiZXhwIjoxNjE3MjcwNTI0LCJzdWIiOiIxMTA1NjciLCJzY29wZXMiOltdfQ.FvsLH-w2rp6yIEfeD5pPS-jtU_1ZJSgPIQd_priWaVf9dVmt2h-kzhISdg228-WKnbz3WLp-wF9iN9wiyGlr9rYvGCaAXM0gmrfzZdvz4qCE9rp6IZy5BWwYMTXMPHTgWIucxP7tHTyZKaucoZ2VWQWaohizjelQtQQd2bZUhzCBhZ68SOAmIhxVqtmq2MtrCydIiqt9e_VSksH4Rw-Gm_rjmVrQ9YWFNX-CBNR9nBOWojcDBVGE_V1xHtxIXe81F18822Gm98VTgXD6NZHnXf8qq4OReCVJRzOPgf5oUUhgsMXYAEzi6itBepRXlFJTmQcVgkMgV1NXjtk4NnJNZoRKBJoCdQ_nak_fk8uSMpWtegZJstpG83xlP0hDd2-JqbBzE-MiCAZA2qu5I_XJrJhxLPJ7tK7xxexn2Y0Iz2llN5J0fIFitPTkEi0HuObqc8DZRMLlUdAMzcHHaB3a53Sov2j5FAu6t06W8Cj785fNHtZScv10f2PxbgazaA2-IujwesWDyhKaKGnAxq5wuFc2wESAxQR60U8ZU7UvZ4Qq2J2cn7upbhLRn0_j38dNO1mD7J7xtmlPcIpX8obvl21CsQ1ZIWTYLX8bhgoou-5PoKG-tYDS5FA_5gXnCjSU4tzrMx39rOcltN5w_0f1lDw4yceJbh7g9piD7CQJZWw",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -462,19 +492,18 @@
 								{
 									"key": "first_name",
 									"value": "Antony",
-									"type": "text",
-									"disabled": true
+									"type": "text"
 								},
 								{
 									"key": "last_name",
 									"value": "CASTANER",
-									"type": "text",
-									"disabled": true
+									"type": "text"
 								},
 								{
 									"key": "gender",
-									"value": "K",
-									"type": "text"
+									"value": "M",
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "hire_date",
@@ -683,6 +712,16 @@
 				{
 					"name": "employees.myDepartment",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTc2MmIzMDgzNDk4YjU2ZGZmNDI0MmJiYTRmNjZiYmQ2NDdjYTJiYzNlMTc1ZGNjNmE1NzIzMWE2ZTdhMmY5YTk4NjA5ZjQ3OGYwNTRlZjgiLCJpYXQiOjE1ODU3Mjc4MTcsIm5iZiI6MTU4NTcyNzgxNywiZXhwIjoxNjE3MjYzODE3LCJzdWIiOiIxMDAwMSIsInNjb3BlcyI6W119.TQqzZAmiyyg0jRgiVhPLz8Y4QriNPS4C-qkwEbnVEjaUgz7SV4UavP0simVYEUODYxv9VfnF7WdQCIA-DXH-MGsPchl0tauq7ff1ccFPY8cVRn4EDyUojW8HJWEiHMOI7ONo6hyUBZXMe3rbI1WrAsYrxhqlGiSFOreEDVnfnE9w1vQiGf3QdjV2FG2fG32FYxRWE9xeCX0Mag2h-Y70kpbG9ZclM1ZGjrlhL9mr9hLqcX2EOB8Yj8Q3b5zIxzPslTAR9FwJXY6YkeXxm8P1N4YHMlnrvhPcR7tNh_f2IM5eqJMtGQOoJpZ5qbpB20ZPt8I7Ug-sKphtkP40gCDTdZpPeC3KcBLsmvDEvcG6BU8yo_ljMUsOJ1IN5m2Y_Sfl80XGwj6VuerMRYjFF1g3DX0m445L-h8M9h3HFj95O8hshpshn6VbPPtbfgTKQrpz0jzsi0BSNHWDx22Knn1P7sXtU-DEtvE5yhc2WAmMpS_P-WI7QibsoENyChMubSR6ugS659xZHJNhRndz2E-AWQ-74VHWIXBZ0aj9niwp_0P0OH7f5leKsyuctBPG4SSEW04xlALF8hePGqbaon8EHkfu2wsXzH8rBiSEQRCXHAZG67zOAtSEG10zVzbl851j0vgT8EVk3hxgZDoT7XsOtxdK2m5RLTH0xAYq5YI733k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -692,7 +731,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://castaner-vm.local/api/employees/110039/myDepartment",
+							"raw": "http://castaner-vm.local/api/employees/10006/myDepartment",
 							"protocol": "http",
 							"host": [
 								"castaner-vm",
@@ -701,7 +740,7 @@
 							"path": [
 								"api",
 								"employees",
-								"110039",
+								"10006",
 								"myDepartment"
 							]
 						}
@@ -717,6 +756,16 @@
 				{
 					"name": "titles.index",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOGJiZWNkZGU0MzRjMTdmYWE3ODU2MjVkNjRkODJmYzI1NGI5NmRjZGIyN2UyMDZkYjYyMjAxNGM4YTU1NmMxMjBlYzZkOGFjOWQ4NjRjNDEiLCJpYXQiOjE1ODU3Mjc2NzIsIm5iZiI6MTU4NTcyNzY3MiwiZXhwIjoxNjE3MjYzNjcyLCJzdWIiOiIxMTE5MzkiLCJzY29wZXMiOltdfQ.IE1JiWOMxD493wkueVWNh0sEsyACA_rw4SeNoIvo0uOiXll0OIfkYrvEZJbQ0CzDD5Rkzo6QPm8QOhVxSuyq-avqpJ9_q8-mtXJ5mVFz9KqsMgT5_73bk-HR3lJ8GpnXuH6G1fsiZyuaYMcAY6eqCEwswOAGznHE7wAXe8BvNIdjI26R8KwGSUVybqqP5xqUcd1WMNQXzF-RtHeUgZ7pCpzuaKYi6psd5kfnz5mC_DH0GzQSru5l-oYa2-_0iD-nMkJIzbRwt5GYffq9dS3bSpI4tWJF9J3XF_DcdAsVoPUnqogqSKCoBVypjuXIu0zK0X_8310UngTDmHxiZhC2Qiw0HCsbyu1fqzCLKMXLixG16CqYwFKtbUvaJ-jDLOsUvr8jxPsfIgqRlbl5z4DvRjfc5Qh497-Bm8cAd7Dq2voPM0_bm30am3v21Hj9ijpX9gEcsBZXz3Th6j8jNDgo316aUORXWVR-6SYbMcol43IDlUFMfJ7j7ik67csHnG9BmnxqfFOFI8qgTlb8PmJZxU-kQF4Y3xNPJEAcURuwqBipRp0dmymgCH2-JrcTNeaOJYOP39naCQqmx9yxuuihHPdWeCSs6ToLgChxvQ1gHF7jJeG-C5Ak30eGq_ByKEFUUOeAU8UNauK2dGDNlQDXl1ukl6d008thBZOVIlSpPkU",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -726,7 +775,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://castaner-vm.local/api/employees/10005/titles",
+							"raw": "http://castaner-vm.local/api/employees/10006/titles",
 							"protocol": "http",
 							"host": [
 								"castaner-vm",
@@ -735,7 +784,7 @@
 							"path": [
 								"api",
 								"employees",
-								"10005",
+								"10006",
 								"titles"
 							]
 						}
@@ -745,6 +794,16 @@
 				{
 					"name": "titles.show",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYzM2ODMxYmI0NTExNTQzZmI0NzAyYTVlNjhlYzJiNDAxN2UwNmUxYmZmZGZhMDY5ZjQ5MWJiMDVjNjk2NzM2YTU1MzYzMzRhMDIwYTZmZjgiLCJpYXQiOjE1ODU3MjM5ODQsIm5iZiI6MTU4NTcyMzk4NCwiZXhwIjoxNjE3MjU5OTg0LCJzdWIiOiIxMDAwMSIsInNjb3BlcyI6W119.ODyHnn52QCrD6nd2ZYMQHL9cOaqU_P3H3i_oB_gibkGJpeHz1LtHn6dyVgTLepQuDkAe6wRpzhPKf5AFNHWQzXwYwqCJHhWYXJaJMeO6_D8IiYisoYCfk2vIC2ajFYg9H7gR3GnbwBP3k_aHzMU3Z2lRUIcVRvAsO_tA5vZmGRP6rgpMpJD1-L6tioJd0Yr11cFS4O7AJEZEAfjODiIEJC1-0MRSw-ZvTQIx9JUCjw6WbPdhNwaCsEcQsl7bSqNFj5IguwVGhHRx5e0EChWQGkrU6kckCYzl1OVTeDc41JvbKSiie_vkc_qeXOU2qC8_iPMPbTi_Z7OadxOK4p_OsqqVtcpj89Bmpx-JLf7KP-4pUvCi7D0aDvzZD2yuu5aPUBhBzP3HPg9QeyTJ1e_Ah_N5xvgKFAAQBLJecoeMGuo1Sb5TbS4xui4Cwaabb8lOW2_GDlAbn8fKctxHk0gOSd-RFd9vON-rsXjymzeeT29ywNeSbs_GHSfs7qMIjNY7VLx9s59t2Aut0FKGms9i1tCNC8t4vlNeGm7cFKZMP5i3shdh1_RFYAooXjJhaFUdGkR3yir0sfcPGfqkJ-r0JH3hMghnrZE3po4M9dR2WnawRFq20plqzt_8sRlR-4yFGq7jW0OJkhvPm2-FsdNQ3AjaQoCQSmP_FDjrw84gnis",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -780,6 +839,16 @@
 				{
 					"name": "titles.store",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTlmZmZiZTk0MTBjNTBmYTM5ZGQ5YTFkZjQ0MzM4ODkwYjEzMGQ5YTI2Y2IyYzU1Mjc2NTg1YWE5Nzc5ODBlNTI0ZDk5ZmVlYzdkNmUzZmUiLCJpYXQiOjE1ODU3MzA5MDIsIm5iZiI6MTU4NTczMDkwMiwiZXhwIjoxNjE3MjY2OTAyLCJzdWIiOiIxMTE5MzkiLCJzY29wZXMiOltdfQ.S0KgwAM_P9ORsX0QRapza296AWv0yVKNiXaVrNIhgYHvsne2E1lYEBkw1EPoQ5z6UgNVq7nJGFiSrwzgiyqkxHoF5aQl9w7F56MyKt8yukAOodpA80HI7BGb0WoMc5noP-hl83Tll5xcXCly9F7lbb0RZfo4BJc-NSMx2uyHZ64sUeEIU_fHczcofcK1W60O3ROkwqCSOXW_XXZnxJIJn24PYPw3uAMqTQpY7dOKaTgfx5IsySX07O9EJBRILZw8HfbUGaS5F7G76Zx01bZuZ4gm_HraSiDbBH3q2sDgNVqY_2z9wwR8G3McEuwUqo2hQAU8tPcM5ZiG3fIQdY-MLn6evyKUwJAstBCioIFfhyVn-4A08_QKOJvCD8WiEH743Doy4Xv83Z_qC_E0nDdsvgsk1GnXJUJm8shlcvJxfDmfqflYXvLIPo8SAtKsmzBYyK_JwuDuecBvfjOPOBXm6_u8lJgIEFevlze8kUROrBTe7MTzB_fTo8ktCNY4-hTV99VS6eHii7BIIToSYVorpbyig13gSsusiO0kYrrk8tkoqRaiWmwo2RTpn37gHwrFqTREM46Mu33xRMSEONKaP1vo4o2BQ6VFaiIknmD8S2sVmoqa-kSq-0wyHeKjsb1HYw9IanhR2113p2mJ_-Xwq83I0FD8snWuWRFPQ1a_71k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -805,7 +874,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://castaner-vm.local/api/employees/10005/titles",
+							"raw": "http://castaner-vm.local/api/employees/10006/titles",
 							"protocol": "http",
 							"host": [
 								"castaner-vm",
@@ -814,7 +883,7 @@
 							"path": [
 								"api",
 								"employees",
-								"10005",
+								"10006",
 								"titles"
 							]
 						}
@@ -830,6 +899,16 @@
 				{
 					"name": "salaries.index",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjRhMjY2MGE5OTY4YjljMGI1Y2Q1NGJmYjgxNDYwNGU0ZmI4MjIwZDNhODU4Y2Q2NGM0YzdkYWI3ODE3YjRjZDRlZWYwODFmMDBhNjllOTQiLCJpYXQiOjE1ODU3MzE4NTAsIm5iZiI6MTU4NTczMTg1MCwiZXhwIjoxNjE3MjY3ODUwLCJzdWIiOiIxMTE5MzkiLCJzY29wZXMiOltdfQ.PnshRotNlDEf6Kyg3SRzC0HVAQTQpJLauxPgHDUSzQIYEM2-_aMx8_myHM5X4ZbwbJaglDYe2yU2I2uD6RbRvBaY-ma5JcFtynuAbBmrMypnRc8HaytOSYdxI2DCgeEgrJ22ezldqKeWx3hTM4e8EPC8XUtfDrLpbe-A7n1kTT_8qtB55gDvHnUZETA1Bn58XIPOdp0of7NwIKCfBzpuDLsM_50M6k-6df6Z_hTbSaBY-g6kpfcxvFloCDQ4rASU6yu0ukTqFCErV412OnlNma27qdpazo2ifKqBsSDAbRGKd1O2GwXYFEd9VuHpFQ7JxILe52Lwff6SuYi00y-XJwSbs4aHxUFroBZ45fH2c_iMetQ29fD42Q5nvaVEknlOmommdqRDICsCbdEm7w9hNHyFQuBngQ-JNnbxyiOEhoRO6zDFls5SYY1ybMDvQ54G3AFBo526TFVGrzarIt8wiuFM7Y_fszJ65Ecdph9MbN0qDKGrc0JiUjo_6T8kPUr3NQk7aWadCzygdSrqIycP1KrDbmXPOinrhR_YkCRsnGJaD0oqx8U-IFsc3ULBLDWR3QJoal_sqMH7YbIn7j08JdXPXpRMRPzyrZZDhx-cZUbqqVao7XWT-q9mngiUwQ07OQOc_waOgBzhpKSILjTz334JjeogZcHDxOjSxojjJ80",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -839,7 +918,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://castaner-vm.local/api/employees/10005/salaries",
+							"raw": "http://castaner-vm.local/api/employees/10006/salaries",
 							"protocol": "http",
 							"host": [
 								"castaner-vm",
@@ -848,7 +927,7 @@
 							"path": [
 								"api",
 								"employees",
-								"10005",
+								"10006",
 								"salaries"
 							]
 						}
@@ -858,6 +937,16 @@
 				{
 					"name": "salaries.show",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODMzY2ZhNjVhN2JiYjRjYjBiMDI2MTQ3NzZhMTZmOTVhNDFkMjMzNzYyMTUyNThhNzM5Y2U4MzM0ZGEwZGIxNWQ2Y2Y1NmFmYmMxYTAzZTMiLCJpYXQiOjE1ODU3MzMzMDUsIm5iZiI6MTU4NTczMzMwNSwiZXhwIjoxNjE3MjY5MzA1LCJzdWIiOiIxMTA1NjciLCJzY29wZXMiOltdfQ.mLyUNPBSiev7Dac-4G73yrYq-bKiQdX1ElUsUIuaiJ1X7010eNCIFAcvUwJlvmLJ-Cq_JcNj35YJM8nII3WMwSZB-tIn4HJ3wUoWUsijOA6lvxsF2FF5EE8Z8M2wOOQh6W0_MpCpZM1KeJ9182dDRsDzArp35NgDXcgHwTqWVwmKxnbyi_x7UFsvS4Quhu9p-WfhyfEimXTx42iPVMRACyz9FZp0m10ZqjSxkPGb6kccWJIp8WAhxGKvlQh7lLHMVljYjE04hY5xYTZOhF879XBpLhH5R1S2AZLfZ2NvBYQpQFvwDqBh4sQMy9FWp-HcpEnZre9CF7-YD0ITpJ8jo0OKdZ_IxJiTjKgR4hHpunlH8q3zZ7AXNC4hP8nQ93-QT3BXigHelGR0FLTDuMAsIbSomqTkXo1c26yjn1McQUj89rrDqE30jjxjbSsAMhP8pLmvlfGw7qbhBRiS_aR3tnc5RyE4Ahp9Ivjwr3wdUTLEsLyqNzwpsW-kv9XT3rEGM5fcRAFKfa6lxkxr8cOEavWEChEfU8iWdLEVN0g-sih1xYzM4FROGki-IjpWHpPOSSBvahos7yYJhydoFT_mJnkux3CbNBQxiZtve7qE5nyDiTv8jbuyPw6pgsHCQSwo3yI7SReeqNo7FEDhUKj8Z5_tNlfSxH3f6T1YAGCvhp8",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -867,7 +956,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://castaner-vm.local/api/employees/10005/salaries/1",
+							"raw": "http://castaner-vm.local/api/employees/10006/salaries/1",
 							"protocol": "http",
 							"host": [
 								"castaner-vm",
@@ -876,7 +965,7 @@
 							"path": [
 								"api",
 								"employees",
-								"10005",
+								"10006",
 								"salaries",
 								"1"
 							]
@@ -887,6 +976,16 @@
 				{
 					"name": "salaries.store",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYzk4YzI0OGJkZjZjMzU5MTdhMTEyYTNmNTgzYjg3MmIyOWE1MTk1ZjQyNDEwZTAzYTk4MmQxZDFhNTUwNWZjODMzMDMzZjQwZWVmYjFhZjQiLCJpYXQiOjE1ODU3MzEwNDMsIm5iZiI6MTU4NTczMTA0MywiZXhwIjoxNjE3MjY3MDQzLCJzdWIiOiIxMTA1NjciLCJzY29wZXMiOltdfQ.GHfbBv9viYN91lYtvfAMUDIWLzfupNq8yfUImoHgbcZPNlRVvBCaJgenZD5lgXkq2iqvxBSNrprhKl1NCO0Nejz3_kq8ebBeqOrr4y3feZf_QcoMbQ0A-k4ReK8d8xS54QdCyXVI3X37UPNVH7TM3EYn8MQ2aczk2jAQjfLuewA9VEQNshnMBMMHLH6yZZfw-VSHCuz3Ga2rX5qCCPYOFJAEA8Wb9usybwh3Fys_bFY9ASgH1yivUwl0djVgdk8jeKgSO3ikq1MRvK4vQYjCje5QFkjGh0li6cjjy6xFjo_7Nq5cRZwtWy1FMr8qZxzt2nizIf6X5_RVk_W6_veOofZXZRX0EaUE0bFDnlL1e0Vkrq9JyPbxDgUStoZhdTJmTmEibodxz0ElflmOr0nYpKHhX0l4Xd2I1y6Ue8_M8aQYhEW6oC54wZ5vXGCUoLTi-Z1XlnV1fA-L40Qz1pmS7SaB9l78tGY_RXoEKUREUq3pcQBo-o6JSx23vMIiLqmZGBFxyEtmqzYDFIsOzphlluvGx_NGFwcF1hhXSIJt1WTx37fa67BkOgLn5U6vFyvix4YlVljX-r6E2OHVYBa3Qqpe2SGM-r9KJ850pl_lHFeP0hXKCkVukEKhQi9X8BEL7gO93UIRT-gm-3qo7ls0vt5Lr4wcMuX0UNY6VI1BqGQ",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -912,7 +1011,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://castaner-vm.local/api/employees/10005/salaries",
+							"raw": "http://castaner-vm.local/api/employees/10006/salaries",
 							"protocol": "http",
 							"host": [
 								"castaner-vm",
@@ -921,7 +1020,7 @@
 							"path": [
 								"api",
 								"employees",
-								"10005",
+								"10006",
 								"salaries"
 							]
 						}
@@ -957,7 +1056,9 @@
 								{
 									"key": "email",
 									"value": "yuchang.weedman@employees.edu",
-									"type": "text"
+									"description": "Manager d009",
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "password",
@@ -969,6 +1070,12 @@
 									"value": "georgi.facello@employees.edu",
 									"type": "text",
 									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "leon.dassarma@employees.edu",
+									"description": "Manager d005",
+									"type": "text"
 								}
 							]
 						},
