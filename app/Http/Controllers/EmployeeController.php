@@ -56,6 +56,8 @@ class EmployeeController extends Controller
      */
     public function update(EmployeeRequest $request, Employee $employee)
     {
+        $this->authorize('update', $employee);
+
         $data = $request->validated();
 
         $employee->update($data);

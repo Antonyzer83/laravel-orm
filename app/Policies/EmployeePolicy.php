@@ -53,7 +53,8 @@ class EmployeePolicy
      */
     public function update(User $user, Employee $employee)
     {
-        //
+        $manager = $user->employee()->where('emp_no', auth()->user()->emp_no)->first();
+        return ($manager->isManager() && $manager->myDepartment()->dept_no === $employee->myDepartment()->dept_no) || $manager->emp_no === $employee->emp_no;
     }
 
     /**
