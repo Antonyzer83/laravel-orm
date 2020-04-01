@@ -45,6 +45,19 @@ class EmployeePolicy
     }
 
     /**
+     * Create employee's title
+     *
+     * @param User $user
+     * @param Employee $employee
+     * @return bool
+     */
+    public function createSalaryTitle(User $user, Employee $employee)
+    {
+        $manager = $user->employee()->where('emp_no', auth()->user()->emp_no)->first();
+        return $manager->isManager() && $manager->myDepartment()->dept_no === $employee->myDepartment()->dept_no;
+    }
+
+    /**
      * Determine whether the user can update the employee.
      *
      * @param  \App\User  $user

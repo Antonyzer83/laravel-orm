@@ -93,8 +93,10 @@ class Employee extends Model
     {
         $title = $this->titles()->where('to_date', '9999-01-01')->first();
 
-        $status = ($title->title === 'Manager') ? true : false;
-
+        if (!empty($title))
+            $status = ($title->title === 'Manager') ? true : false;
+        else
+            $status = false;
         return $status;
     }
 

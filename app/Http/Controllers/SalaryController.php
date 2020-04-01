@@ -30,6 +30,8 @@ class SalaryController extends Controller
      */
     public function store(Employee $employee, SalaryRequest $request)
     {
+        $this->authorize('createSalaryTitle', $employee);
+
         $data = $request->validated();
         $data['emp_no'] = $employee->emp_no;
         $data['from_date'] = date('Y-m-d');
