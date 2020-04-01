@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Employee;
 use App\Http\Requests\EmployeeRequest;
+use App\User;
 
 class EmployeeController extends Controller
 {
@@ -22,9 +23,12 @@ class EmployeeController extends Controller
      *
      * @param EmployeeRequest $request
      * @return \Illuminate\Http\JsonResponse
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function store(EmployeeRequest $request)
     {
+        //$this->authorize('create', User::class);
+
         $data = $request->validated();
 
         $employee = Employee::create($data);

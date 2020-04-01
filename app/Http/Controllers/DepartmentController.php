@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Department;
-use App\Employee;
 use App\Http\Requests\DepartmentRequest;
 
 class DepartmentController extends Controller
@@ -65,6 +64,7 @@ class DepartmentController extends Controller
      *
      * @param $id
      * @return mixed
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function employees($id)
     {
