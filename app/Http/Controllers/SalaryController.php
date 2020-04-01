@@ -16,6 +16,8 @@ class SalaryController extends Controller
      */
     public function index(Employee $employee)
     {
+        $this->authorize('createSalaryTitle', $employee);
+
         $salaries = $employee->salaries()->orderBy('to_date', 'DESC')->get();
 
         return $salaries->toJson();
@@ -55,6 +57,8 @@ class SalaryController extends Controller
      */
     public function show(Employee $employee, $id)
     {
+        $this->authorize('showSalary', $employee);
+
         $salary = $employee->salaries()
             ->orderBy('to_date')
             ->skip($id - 1)

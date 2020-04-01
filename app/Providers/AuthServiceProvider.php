@@ -6,8 +6,6 @@ use App\Department;
 use App\Employee;
 use App\Policies\DepartmentPolicy;
 use App\Policies\EmployeePolicy;
-use App\Policies\TitlePolicy;
-use App\Title;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Laravel\Passport\Passport;
 
